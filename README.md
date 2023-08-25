@@ -50,6 +50,16 @@ wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforg
 bash Mambaforge-Linux-x86_64.sh 
 ```
 
+### Install Additional Packages
+```bash
+apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module
+```
+
+<!-- ### Configure Env Variables
+```bash
+echo "export NO_AT_BRIDGE=1" >> ~/.bashrc
+``` -->
+
 ### Install pybind:
 ```bash
 mamba install -c conda-forge pybind11

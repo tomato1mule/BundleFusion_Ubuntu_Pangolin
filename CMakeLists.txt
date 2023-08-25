@@ -121,4 +121,4 @@ pybind11_add_module(example pybind/example.cpp)
 pybind11_add_module(opencv_example pybind/opencv_example.cpp)
 target_link_libraries(opencv_example PRIVATE ${OpenCV_LIBS})
 pybind11_add_module(PyBundleFusion pybind/PyBundleFusion.cpp)
-
+target_link_libraries(PyBundleFusion PRIVATE ${OpenCV_LIBS} BundleFusion)
