@@ -44,20 +44,15 @@ docker build -t bundlefusion-cu10.0-cudagl:latest .
 bash ./run_docker.sh
 ```
 
-### Install Micromamba:
+### Install Mamba:
 ```bash
-apt install curl
-# Linux Intel (x86_64):
-curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvjO bin/micromamba > /usr/bin/micromamba && chmod +x /usr/bin/micromamba
-# Linux ARM64:
-curl -Ls https://micro.mamba.pm/api/micromamba/linux-aarch64/latest | tar -xvjO bin/micromamba > /usr/bin/micromamba && chmod +x /usr/bin/micromamba
-# Linux Power:
-curl -Ls https://micro.mamba.pm/api/micromamba/linux-ppc64le/latest | tar -xvjO bin/micromamba > /usr/bin/micromamba && chmod +x /usr/bin/micromamba
-# macOS Intel (x86_64):
-curl -Ls https://micro.mamba.pm/api/micromamba/osx-64/latest | tar -xvjO bin/micromamba > /usr/bin/micromamba && chmod +x /usr/bin/micromamba
-# macOS Silicon/M1 (ARM64):
-curl -Ls https://micro.mamba.pm/api/micromamba/osx-arm64/latest | tar -xvjO bin/micromamba > /usr/bin/micromamba && chmod +x /usr/bin/micromamba
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh
+bash Mambaforge-Linux-x86_64.sh 
+```
 
+### Install pybind:
+```bash
+mamba install -c conda-forge pybind11
 ```
 
 ---

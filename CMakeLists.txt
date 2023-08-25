@@ -20,6 +20,7 @@ find_package (OpenCV REQUIRED)
 list(APPEND CMAKE_INCLUDE_PATH "/usr/local/include")
 # remove this line if using 16.04
 find_package (Eigen3 3.3 REQUIRED NO_MODULE)
+find_package(pybind11 REQUIRED)
 
 
 
@@ -60,6 +61,7 @@ include_directories(
   ${PROJECT_SOURCE_DIR}/include/DepthSensing/
   ${PROJECT_SOURCE_DIR}/include/SiftGPU/
   ${PROJECT_SOURCE_DIR}/include/Solver/
+  ${pybind11_INCLUDE_DIRS}
 )
 
 
@@ -114,3 +116,5 @@ target_link_libraries(bundle_fusion_example
 #  gpu_tsdf_bf
 #  )
 
+
+pybind11_add_module(example pybind/PyBundleFusion.cpp)
