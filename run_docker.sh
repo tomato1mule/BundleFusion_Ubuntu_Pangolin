@@ -1,14 +1,9 @@
-xhost local:docker
-
-docker run -v ${DATASETS}:/app/data \
---rm --gpus all \
+docker run \
+--gpus all \
 -e DISPLAY=$DISPLAY \
--v /tmp/.X11-unix:/tmp/.X11-unix:rw  \
+-e "TERM=xterm-256color" \
 --privileged \
 --device /dev/dri \
 --net=host \
---volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
 -it \
-bundlefusion-cu10.0-cudagl:latest ./build/bundle_fusion_example ./zParametersDefault.txt ./zParametersBundlingDefault.txt data
-
-#./build/bundle_fusion_example ./zParametersDefault.txt ./zParametersBundlingDefault.txt data
+bundlefusion-cu11.4-cudagl:latest
