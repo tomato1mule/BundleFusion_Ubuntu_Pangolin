@@ -1,3 +1,5 @@
+xhost local:docker
+
 docker run \
 --gpus all \
 -e DISPLAY=$DISPLAY \

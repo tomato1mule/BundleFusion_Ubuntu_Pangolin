@@ -93,7 +93,7 @@ endif()
 
 add_executable(bundle_fusion_example example/bundle_fusion_example.cpp)
 target_link_libraries(bundle_fusion_example 
-   BundleFusion
+  BundleFusion
 )
 # 
 # include_directories(
@@ -117,4 +117,8 @@ target_link_libraries(bundle_fusion_example
 #  )
 
 
-pybind11_add_module(example pybind/PyBundleFusion.cpp)
+pybind11_add_module(example pybind/example.cpp)
+pybind11_add_module(opencv_example pybind/opencv_example.cpp)
+target_link_libraries(opencv_example PRIVATE ${OpenCV_LIBS})
+pybind11_add_module(PyBundleFusion pybind/PyBundleFusion.cpp)
+

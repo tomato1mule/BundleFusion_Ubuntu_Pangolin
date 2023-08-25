@@ -55,6 +55,11 @@ bash Mambaforge-Linux-x86_64.sh
 mamba install -c conda-forge pybind11
 ```
 
+### Install Python Dependencies:
+```bash
+pip install opencv-python
+```
+
 ---
 
 
