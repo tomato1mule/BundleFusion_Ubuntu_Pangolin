@@ -1,9 +1,13 @@
-#pragma once
-
 #include <iostream>
-#include <opencv2/opencv.hpp>
+#include <string>
+#include <fstream>
 #include <BundleFusion.h>
+#include <dirent.h>
+#include <algorithm>
+#include <opencv2/opencv.hpp>
 #include <GlobalAppState.h>
+#include <unistd.h>
+#include <sys/time.h>
 #include <pybind11/pybind11.h>
 #include <pybind11/numpy.h>
 
@@ -32,6 +36,15 @@ public:
             std::cerr << "BundleFusion not initialized!" << std::endl;
             return false;
         }
+
+        if ( rgbImage.empty() || depthImage.empty() )
+        {
+            std::cout<<"no image founded" << std::endl;
+        }
+
+        // cv::imshow ( "rgb_image", rgbImage );
+        // cv::imshow ( "depth_image", depthImage );
+        char c = cv::waitKey ( 20 );
         
         return processInputRGBDFrame(rgbImage, depthImage);
     }
