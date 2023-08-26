@@ -19,7 +19,7 @@ s_siftMatchRatioMaxLocal = 0.8f;
 s_siftMatchRatioMaxGlobal = 0.8f;
 
 s_optMaxResThresh = 0.08f;			//not squared (per axis component)
-s_denseDistThresh = 0.15f;
+s_denseDistThresh = 0.10f;
 s_denseNormalThresh = 0.97f;
 s_denseColorThresh = 0.1f;
 s_denseColorGradientMin = 0.005f;
@@ -46,9 +46,9 @@ s_downsampledHeight = 180;              ***** CAMERA SPECIFIC *****
 
 
 //dense term filtering
-s_colorDownSigma = 2.5f;
-s_depthDownSigmaD = 1.0f;
-s_depthDownSigmaR = 0.05f;
+s_colorDownSigma = 1.5f;
+s_depthDownSigmaD = 0.6f;
+s_depthDownSigmaR = 0.03f;
 
 s_maxKabschResidual2 = 0.0004f;
 
@@ -69,8 +69,8 @@ s_minNumMatchesLocal = 5;
 s_minNumMatchesGlobal = 5;
 
 // filtering 
-s_depthSigmaD = 2.0f;	//bilateral filter sigma domain
-s_depthSigmaR = 0.05f;	//bilateral filter sigma range
+s_depthSigmaD = 1.5f;	//bilateral filter sigma domain
+s_depthSigmaR = 0.03f;	//bilateral filter sigma range
 s_depthFilter = true;	//bilateral filter enabled depth
 
 s_useComprehensiveFrameInvalidation = true;

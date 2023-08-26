@@ -16,10 +16,10 @@ s_windowHeight = 720;		//render window height
 //s_windowWidth = 1280;		//render window width
 //s_windowHeight = 960;		//render window height
 
-s_integrationWidth = 640;	//input depth gets re-sampled to this width (decrease to improve perf.)    ***** CAMERA SPECIFIC *****
-s_integrationHeight = 360;	//input depth gets re-sampled to this height (decrease to improve perf.)   ***** CAMERA SPECIFIC *****
-s_rayCastWidth = 640;		//should be same as integration except if rendering video                  ***** CAMERA SPECIFIC *****
-s_rayCastHeight = 360;                                                                                 ***** CAMERA SPECIFIC *****
+s_integrationWidth = 1280;	//input depth gets re-sampled to this width (decrease to improve perf.)    ***** CAMERA SPECIFIC *****
+s_integrationHeight = 720;	//input depth gets re-sampled to this height (decrease to improve perf.)   ***** CAMERA SPECIFIC *****
+s_rayCastWidth = 1280;		//should be same as integration except if rendering video                  ***** CAMERA SPECIFIC *****
+s_rayCastHeight = 720;                                                                                 ***** CAMERA SPECIFIC *****
 
 //trajectory manager/reintegration
 s_maxFrameFixes = 10;		//max number of frames reintegrated per frame 
