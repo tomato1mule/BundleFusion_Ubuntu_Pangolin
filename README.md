@@ -34,9 +34,13 @@ Recommanded:
 * nvidia/cudagl:10.0-devel-ubuntu16.04 (for CUDA 10)(test passed!)
 * nvidia/cudagl:9.1-devel-ubuntu16.04 (for CUDA 9)
 
+```bash
+sudo docker pull nvidia/cudagl:11.4.0-devel-ubuntu20.04
+```
+
 ### Build:
 ```
-docker build -t bundlefusion-cu10.0-cudagl:latest .
+docker build -t bundlefusion-cu11.4-cudagl:latest .
 ```
 
 ### Run Docker:
@@ -69,6 +73,27 @@ mamba install -c conda-forge pybind11
 ```bash
 pip install opencv-python
 ```
+
+### (Optional) Install Realsense SDK
+```bash
+mkdir -p /etc/apt/keyrings
+curl -sSf https://librealsense.intel.com/Debian/librealsense.pgp | tee /etc/apt/keyrings/librealsense.pgp > /dev/null
+apt-get install apt-transport-https lsb-release
+
+echo "deb [signed-by=/etc/apt/keyrings/librealsense.pgp] https://librealsense.intel.com/Debian/apt-repo `lsb_release -cs` main" | tee /etc/apt/sources.list.d/librealsense.list
+apt-get update
+
+apt-get install librealsense2-dkms librealsense2-utils librealsense2-dev librealsense2-dbg
+pip install pyrealsense2
+```
+
+## Troubleshooting
+1. If you get `Authorization required, but no authorization protocol specified`, run the following command in your host (not in docker container)
+```shell
+xhost -local:root
+```
+
+2. Please check that if your host PC is using supported linux kernel for realsense.
 
 ---
 
