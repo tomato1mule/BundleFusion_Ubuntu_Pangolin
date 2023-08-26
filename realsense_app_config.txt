@@ -11,8 +11,8 @@ s_topVideoTransformWorld = 1.0f 0.0f 0.0f 0.0f 0.0f 1.0f 0.0f 0.0f 0.0f 0.0f 1.0
 s_topVideoCameraPose = 0.0f 0.0f 0.0f 0.0f; //rotation (deg around z axis), translation (m)
 s_topVideoMinMax = 0.0f 0.0f;
 
-s_windowWidth = 1280;		//render window width    ***** CAMERA SPECIFIC *****
-s_windowHeight = 720;		//render window height   ***** CAMERA SPECIFIC *****
+s_windowWidth = 1280;		//render window width    
+s_windowHeight = 720;		//render window height   
 //s_windowWidth = 1280;		//render window width
 //s_windowHeight = 960;		//render window height
 
@@ -30,24 +30,24 @@ s_minPoseDistSqrt = 0.0f;	//reintegrate everything above that pose distance (squ
 // **** DEPTH SENSING BELOW ***** //
 ////////////////////////////////////
 
-s_sensorDepthMax = 5.0f;	//maximum sensor depth in meter
+s_sensorDepthMax = 1.0f;	//maximum sensor depth in meter
 s_sensorDepthMin = 0.1f;	//minimum sensor depth in meter
-s_renderDepthMax = 5.0f;	//maximum render depth in meter
+s_renderDepthMax = 1.0f;	//maximum render depth in meter
 s_renderDepthMin = 0.1f;	//minimum render depth in meter
 
 // sdf and hash settings
-s_SDFVoxelSize = 0.01f;//0.010f;				//voxel size in meter (IMPORTANT: reduces to improve perf.)
+s_SDFVoxelSize = 0.0025f;//0.010f;				//voxel size in meter (IMPORTANT: reduces to improve perf.)
 s_SDFMarchingCubeThreshFactor = 10.0f;	//marching cube thresh: s_SDFMarchingCubeThresh = s_SDFMarchingCubeThreshFactor*s_SDFVoxelSize
-s_SDFTruncation = 0.06f;				//truncation in meter
-s_SDFTruncationScale = 0.02f;			//truncation scale in meter per meter
-s_SDFMaxIntegrationDistance = 3.0f;		//maximum integration in meter
-s_SDFIntegrationWeightSample = 1;		//weight for an integrated depth value
+s_SDFTruncation = 0.01f;				//truncation in meter
+s_SDFTruncationScale = 0.005f;			//truncation scale in meter per meter
+s_SDFMaxIntegrationDistance = 0.5f;		//maximum integration in meter
+s_SDFIntegrationWeightSample = 2;		//weight for an integrated depth value
 s_SDFIntegrationWeightMax = 99999999;	//maximum integration weight for a voxel
 // s_SDFBlockSize is pound defined (SDF_BLOCK_SIZE)
 // s_hashBucketSize is pound defined (HASH_BUCKET_SIZE)
-s_hashNumBuckets = 800000;				//smaller voxels require more space
-s_hashNumSDFBlocks = 100000;//50000;//100000;	//smaller voxels require more space
-s_hashMaxCollisionLinkedListSize = 7;
+s_hashNumBuckets = 1200000;				//smaller voxels require more space
+s_hashNumSDFBlocks = 150000;	//smaller voxels require more space
+s_hashMaxCollisionLinkedListSize = 8;
 
 // raycast
 s_SDFRayIncrementFactor = 0.8f;			//(don't touch) s_SDFRayIncrement = s_SDFRayIncrementFactor*s_SDFTrunaction;
