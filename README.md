@@ -57,6 +57,7 @@ bash Mambaforge-Linux-x86_64.sh
 ### Install Additional Packages
 ```bash
 apt-get install -y libcanberra-gtk-module libcanberra-gtk3-module
+apt-get install lsb -y
 ```
 
 <!-- ### Configure Env Variables
